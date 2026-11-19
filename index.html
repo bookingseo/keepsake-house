@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171b19">
+  <meta name="description" content="Six story-driven logic puzzles set in a Vietnamese family home. Play for free in English or Vietnamese.">
+  <title>Keepsake House · Arrange the Keepsakes</title>
+  <link rel="stylesheet" href="tro-choi.css">
+  <script src="tro-choi-i18n.js" defer></script>
+  <script src="tro-choi.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell top">
+      <div class="navigation">
+        <nav id="chapters" aria-label="Các màn chơi"></nav>
+        <label class="language-label" for="language">
+          <span id="language-name" data-copy="language">Ngôn ngữ</span>
+          <select id="language" aria-labelledby="language-name">
+            <option value="en" lang="en">English</option>
+            <option value="vi" lang="vi">Tiếng Việt</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="opening">
+      <div>
+        <p class="series" data-copy="series">Phiên huyền học</p>
+        <h1 data-copy="title">Xếp lại kỷ vật</h1>
+      </div>
+      <p data-copy="intro">Đọc câu chuyện của mỗi gian nhà và tìm vị trí cho từng món trên kệ.</p>
+    </div>
+
+    <div class="game">
+      <section class="play" aria-labelledby="shelf-heading">
+        <div class="play-header">
+          <h2 id="shelf-heading" data-copy="shelf">Kệ kỷ vật</h2>
+          <span id="fill-count" class="muted"></span>
+        </div>
+        <div class="shelf" id="shelf"></div>
+        <p class="instruction" id="instruction">Chọn một kỷ vật rồi chọn ô. Chọn hai ô có đồ để đổi chỗ.</p>
+        <h3 data-copy="tray">Những món còn lại</h3>
+        <div class="tray" id="tray"></div>
+        <div class="actions">
+          <button class="primary" id="check" type="button" data-copy="check">Kiểm tra</button>
+          <button id="hint" type="button" data-copy="hint">Gợi ý</button>
+          <button id="undo" type="button" data-copy="undo">Hoàn tác</button>
+          <button id="reset" type="button" data-copy="reset">Xếp lại</button>
+          <button class="quick-clues-button" id="show-clues" type="button" data-copy="showClues">Xem manh mối</button>
+        </div>
+        <p class="feedback" id="feedback" role="status" aria-live="polite" aria-atomic="true"></p>
+        <section class="victory" id="victory" hidden aria-labelledby="victory-title">
+          <div>
+            <h2 id="victory-title" tabindex="-1"></h2>
+            <p id="victory-text"></p>
+          </div>
+          <button class="primary" type="button" id="next" data-copy="next">Màn tiếp theo</button>
+        </section>
+      </section>
+
+      <aside class="story" aria-labelledby="chapter-title">
+        <div class="story-image" aria-hidden="true"></div>
+        <div class="story-body">
+          <p class="series" id="chapter-count"></p>
+          <h2 id="chapter-title" tabindex="-1"></h2>
+          <p class="story-text" id="story-text"></p>
+          <h3><span data-copy="clues">Manh mối</span> <span id="clue-count"></span></h3>
+          <ol class="clues" id="clues"></ol>
+        </div>
+      </aside>
+    </div>
+    <footer class="muted" id="save-status">Tiến độ lưu trên trình duyệt này.</footer>
+  </main>
+  <dialog id="quick-clues" aria-labelledby="quick-clues-title">
+    <h2 id="quick-clues-title" data-copy="clues">Manh mối</h2>
+    <ol class="clues" id="quick-clues-list"></ol>
+    <form method="dialog">
+      <button type="submit" data-copy="closeClues" autofocus>Về kệ kỷ vật</button>
+    </form>
+  </dialog>
+</body>
+</html>
